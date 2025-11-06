@@ -49,3 +49,4 @@ yalc.lock
 # pixi environments
 .pixi/*
 !.pixi/config.toml
+_zips

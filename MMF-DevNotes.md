@@ -1,4 +1,4 @@
-# Issue 8855
+# [Issue 8855][#8855]
 
 ## PDF Tests
 

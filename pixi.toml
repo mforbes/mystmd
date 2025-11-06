@@ -5,8 +5,11 @@ name = "mystmd"
 platforms = ["osx-arm64"]
 version = "0.1.0"
 
-[tasks]
-
 [dependencies]
 nodejs = ">=24.4.1,<24.5"
 typescript = ">=5.7.3,<6"
+maven = ">=3.9.11,<4"
+openjdk = ">=25.0.1,<26"
+
+[tasks]
+rups = "java -jar .pixi/envs/default/bin/itext-rups-25.03.jar"
