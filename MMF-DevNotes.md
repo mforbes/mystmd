@@ -1,5 +1,12 @@
 # [Issue 8855][#8855]
 
+## Questions for someone in the know
+
+* [ ] How can I run something like `pdftotext` to convert `out.pdf` to `out.text` so I
+      can actually check the generation of the PDF file?
+* [ ] How can I set the date so the generated file is invariant?
+
+
 ## PDF Tests
 
 There don't seem to be any integration tests for PDF generation, so I am starting with
@@ -13,6 +20,9 @@ textual representation of the file, and then ensure that this matches.  This wou
 double as establishing a path to ensure ADA compliance in the future (something I am
 thinking about for our university.)
 
+I think that `pdftotext` from the [Poppler][] library might a reasonable solution.  Not
+sure how to run it yet from the testing framework.
+
 ## Latexmk
 
 The actual issue [#1855][] is the use of a potentially corrupt global `.latexmkrc` file.
@@ -24,6 +34,11 @@ really bad, but:
 
 * I don't know how to set environment variables for tests.
 * I don't know how to copy files to the temp directory where `latexmk` is run.
+
+## Other Potential Issues
+
+1. I can't seem to set the date using the header in `input.md`.  The generated file
+   always has the current date under the title - which makes it hard to generate an invariant.
 
 ## Workflow
 
@@ -42,3 +57,4 @@ These should be removed before submitting the final PR.
 
 [#1855]: <https://github.com/jupyter-book/mystmd/issues/1855>
 [pixi]: <https://pixi.sh>
+[Poppler]: <https://poppler.freedesktop.org/>
