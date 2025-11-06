@@ -1,7 +1,12 @@
 NPM = pixi run npm
 
-test-pdf: up
+test-pdf-fast:
 	cd packages/mystmd && $(NPM) run test -- -t "PDF Generation with latexmkrc file - issue 1855"
+
+test-pdf: up test-pdf-fast
+
+test-full: up
+	$(NPM) run test
 
 up:
 	$(NPM) run build
@@ -10,10 +15,8 @@ go:
 	$(NPM) install
 	$(NPM) run build
 
-test-full: up
-	$(NPM) run test -- -t "PDF Generation with latexmkrc file - issue 1855"
 
 clean:
 	$(NPM) unlink mystmd
 
-.PHONY: go clean up test-pdf test-full
+.PHONY: go clean up test-pdf test-pdf-fast test-full
