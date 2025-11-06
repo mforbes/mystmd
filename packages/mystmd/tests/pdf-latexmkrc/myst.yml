@@ -1,0 +1,7 @@
+version: 1
+project:
+  export:
+    format: tex+pdf
+    template: ../templates/tex
+    output: _build/out.pdf
+    article: input.md

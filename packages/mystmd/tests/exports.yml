@@ -266,6 +266,12 @@ cases:
     outputs:
       - path: tex-with-bib/_build/main.bib
         content: tex-with-bib/outputs/main.bib
+  - title: PDF Generation with latexmkrc file - issue 1855
+    cwd: pdf-latexmkrc
+    command: myst build --pdf
+    outputs:
+      - path: pdf-latexmkrc/_build/out_pdf_tex/out.tex
+        content: pdf-latexmkrc/outputs/out.tex
   - title: Index entries write to site and tex
     cwd: indices
     command: myst build --all --ci
