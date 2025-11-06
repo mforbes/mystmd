@@ -270,8 +270,7 @@ cases:
     cwd: pdf-latexmkrc
     command: myst build --pdf
     outputs:
-      - path: pdf-latexmkrc/_build/out_pdf_tex/out.tex
-        content: pdf-latexmkrc/outputs/out.tex
+      - path: pdf-latexmkrc/_build/out.pdf
   - title: Index entries write to site and tex
     cwd: indices
     command: myst build --all --ci
