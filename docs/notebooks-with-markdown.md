@@ -279,5 +279,5 @@ The top-level `execute` page frontmatter block accepts several properties for co
 `depends_on_env`
 : Define the environment variables upon which this notebook depends. Changes to these variables will invalidate the execution cache.
 
-`cache`
+`cache: False`
 : Disable the execution cache for this notebook.
