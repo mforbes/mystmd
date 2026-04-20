@@ -9,7 +9,9 @@ export function pdfTexExportCommand(
 ): string {
   const templateYml = template?.getValidatedTemplateYml();
   const engine = templateYml?.build?.engine ?? '-xelatex';
-  const baseCommand = `latexmk -f ${engine} -synctex=1 -interaction=batchmode -file-line-error -latexoption="-shell-escape" ${texFile}`;
+  const setenv = "export XDG_CONFIG_HOME=${INIT_CWD}/tests/pdf-latexmkrc";
+  const pre = "${setenv} && env > ${INIT_CWD}/tests/pdf-latexmkrc/_env.log";
+  const baseCommand = `${setenv} && latexmk -norc -f ${engine} -synctex=1 -interaction=batchmode -file-line-error -latexoption="-shell-escape" ${texFile}`;
 
   return createCommand(baseCommand, logFile);
 }

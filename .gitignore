@@ -46,3 +46,7 @@ yalc.lock
 
 # vim swap files
 *.swp
+# pixi environments
+.pixi/*
+!.pixi/config.toml
+_zips
